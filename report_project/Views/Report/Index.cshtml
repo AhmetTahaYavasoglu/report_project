@@ -1,0 +1,47 @@
+﻿@using report_project.Models
+@model List<report>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_RLayout.cshtml";
+}
+
+<table class="table table-hover" style="margin-top:20px; margin-left:20px; margin-right:20px">
+    <tr class="bg-transparent">
+        <th>ID</th>
+        <th>Başlangıç Tarihi</th>
+        <th>Bitiş Tarihi</th>
+        <th>Rapor Başlık</th>
+        <th>Personel</th>
+        <th>Sil</th>
+        <th>Detay</th>
+
+    </tr>
+    @foreach(var r in Model)
+    {
+        <tr>
+            <td>
+                @r.reportID
+            </td>
+            <td>
+                @r.StartDate
+            </td>
+            <td >
+                @r.FinishDate
+            </td>
+            <td>
+                @r.reportTitle
+            </td>
+            <td>
+                @r.Employee
+            </td>
+            <td>
+                <a href="/report/reportDelete/@r.reportID" class="btn btn-outline-danger">Sil</a>
+            </td>
+            <td>
+                <a href="/report/Detail/@r.reportID" class="btn btn-outline-success">Detay</a>
+            </td>
+        </tr>
+    }
+    
+    </table>
+    <a href="/report/add/" class="btn btn-outline-primary">Rapor Ekle</a>

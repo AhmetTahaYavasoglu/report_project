@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "add";
+    Layout = "~/Views/Shared/_RLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mg-2">
+                <label>Rapor Başlık</label>
+                <input type="text" name="reportTitle" class="form-control" />
+                <br />
+                <br />
+                <label>Başlangıç Tarihi</label>
+                <input type="datetime-local" class="form-control" name="StartDate">
+                <br />
+                <br />
+                <label>Bitiş Tarihi</label>
+                <br />
+                <input type="datetime-local" name="FinishDate" class="form-control" />
+                <br />
+                <br />
+                <label>İçerik</label>
+                <textarea type="text" name="ReportSubject" class="form-control"></textarea>
+                <br />
+                <label>Personel</label>
+                <br />
+                <input type="text" name="Employee" class="form-control" />
+                <br />
+                <button type="submit" class="btn btn-outline-info">Rapor Ekle</button>
+
+            </div>
+        </div>
+    </div>
+
+
+</form>

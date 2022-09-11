@@ -1,0 +1,32 @@
+﻿@model report_project.Models.report
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_RLayout.cshtml";
+}
+
+@using (Html.BeginForm("reportUpdate", "report", FormMethod.Post))
+{
+    <div class="container">
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-3"><h6>Konu:@Html.TextBoxFor(m => m.reportTitle)</h6></div>
+            <div class="col-md-3"><h6>Başlangıç Tarihi:@Html.TextBoxFor(m => m.StartDate)</h6></div>
+
+            <div class="col-md-3"><h6>Bitiş Tarihi: @Html.TextBoxFor(m => m.FinishDate)</h6></div>
+            <div class="col-md-3"><h6>Personeş: @Html.TextBoxFor(m => m.Employee)</h6></div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-floating">
+                @Html.TextAreaFor(m => m.ReportSubject, new { @class = "form-control", style = "height: 100px" })
+
+            </div>
+        </div>
+        <br />
+        @Html.HiddenFor(x => x.reportID)
+        <button type="submit"  class="btn btn-outline-info">Kaydet</button>
+    </div>
+
+
+}
+
